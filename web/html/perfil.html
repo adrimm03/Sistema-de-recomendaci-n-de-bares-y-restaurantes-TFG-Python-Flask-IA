@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil | Sistema de Recomendación de Bares de Jaén</title>
+  <link rel="stylesheet" href="/web/css/styles.css?v=1">
+</head>
+<body>
+
+  <div id="headerContainer"></div>
+
+  <main class="perfil-main">
+
+    <section class="perfil-card">
+      <div class="perfil-info">
+        <div class="perfil-avatar" id="perfilAvatar">U</div>
+
+        <div class="perfil-texto">
+          <h1 id="perfilNombre">Usuario</h1>
+          <p class="perfil-email" id="perfilEmail">Sin email</p>
+        </div>
+      </div>
+
+      <button class="editar-perfil-btn" id="editProfileBtn" data-i18n-title="perfil_editar_title" title="Editar perfil">✏️</button>
+    </section>
+
+    <section class="perfil-section" id="misOpiniones">
+      <div class="section-header opiniones-header">
+        <h2 data-i18n="perfil_mis_opiniones">Mis opiniones</h2>
+        <div class="opiniones-controls">
+          <button class="opiniones-btn" id="opinionesUp">▲</button>
+          <button class="opiniones-btn" id="opinionesDown">▼</button>
+        </div>
+      </div>
+
+      <div class="perfil-opiniones-list" id="perfilOpinionesList"></div>
+    </section>
+
+    <section class="perfil-section" id="misDestacados">
+      <div class="section-header">
+        <h2 data-i18n="perfil_mis_destacados">Mis destacados</h2>
+      </div>
+
+      <div class="perfil-destacados-grid" id="perfilDestacadosGrid"></div>
+    </section>
+
+  </main>
+
+  <script src="/web/js/traduccion.js"></script>
+  <script src="/web/js/header.js?v=1"></script>
+  <script src="/web/js/perfil.js?v=1"></script>
+</body>
+</html>

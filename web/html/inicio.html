@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Sistema de Recomendación de Bares de Jaén</title>
+  <link rel="stylesheet" href="/web/css/styles.css?v=1">
+</head>
+<body>
+
+  <div id="headerContainer"></div>
+
+  <main class="inicio-main">
+    <section class="search-section">
+      <h1 data-i18n="inicio_title">Encuentra el bar o restaurante ideal en Jaén</h1>
+      <p class="search-subtitle" data-i18n="inicio_subtitle">
+        Elige cómo quieres buscar y encuentra locales que encajen contigo.
+      </p>
+
+      <div class="search-mode-tabs">
+        <button type="button" class="search-mode-btn active" data-target="searchByName" data-i18n="tab_nombre">Por nombre</button>
+        <button type="button" class="search-mode-btn" data-target="searchByFilters" data-i18n="tab_filtros">Por filtros</button>
+        <button type="button" class="search-mode-btn" data-target="searchByDescription" data-i18n="tab_descripcion">Por descripción</button>
+      </div>
+
+      <div class="search-mode-content">
+
+        <form id="searchByName" class="search-mode-panel active-panel">
+          <div class="form-group">
+            <label for="barName" data-i18n="buscar_nombre_label">Buscar por nombre:</label>
+            <input type="text" id="barName" data-i18n-placeholder="buscar_nombre_placeholder" placeholder="Ej.: La Taberna del Centro">
+          </div>
+
+          <div class="search-buttons">
+            <button type="submit" class="login-btn" data-i18n="buscar_nombre_btn">Buscar por nombre</button>
+          </div>
+        </form>
+
+        <form id="searchByFilters" class="search-mode-panel">
+          <div class="filters-row">
+            <div class="form-group">
+              <label for="typeFilter" data-i18n="filtro_tipo_label">Tipo de local:</label>
+              <select id="typeFilter">
+                <option value="" data-i18n="filtro_tipo_todos">Todos</option>
+                <option value="bar" data-i18n="filtro_tipo_bar">Bar</option>
+                <option value="restaurante" data-i18n="filtro_tipo_restaurante">Restaurante</option>
+                <option value="taberna" data-i18n="filtro_tipo_taberna">Taberna</option>
+                <option value="cafeteria" data-i18n="filtro_tipo_cafeteria">Cafetería</option>
+                <option value="meson" data-i18n="filtro_tipo_meson">Mesón</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="zoneFilter" data-i18n="filtro_zona_label">Zona:</label>
+              <select id="zoneFilter">
+                <option value="" data-i18n="filtro_zona_cargando">Cargando localidades...</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="priceFilter" data-i18n="filtro_precio_label">Precio:</label>
+              <select id="priceFilter">
+                <option value="" data-i18n="filtro_precio_todos">Todos</option>
+                <option value="0€">0€</option>
+                <option value="1-10€">1-10€</option>
+                <option value="10-20€">10-20€</option>
+                <option value="20-30€">20-30€</option>
+                <option value="Más de 30€">Más de 30€</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-buttons">
+            <button type="submit" class="login-btn" data-i18n="aplicar_filtros_btn">Aplicar filtros</button>
+            <button type="reset" class="register-btn" data-i18n="limpiar_btn">Limpiar</button>
+          </div>
+        </form>
+
+        <form id="searchByDescription" class="search-mode-panel">
+          <div class="form-group">
+            <label for="userText" data-i18n="descripcion_label">Escribe lo que te apetece:</label>
+            <textarea
+              id="userText"
+              rows="5"
+              data-i18n-placeholder="descripcion_placeholder"
+              placeholder="Ej.: Me apetece encontrar un bar económico por el centro de Jaén, con buenas tapas, ambiente tranquilo, horario de cena y que tenga platos recomendados como bravas o croquetas."
+            ></textarea>
+            <small class="helper-text" data-i18n="descripcion_helper">Debes escribir al menos 20 palabras.</small>
+            <small class="error-message" id="textError"></small>
+          </div>
+
+          <div class="search-buttons">
+            <button type="submit" class="login-btn" data-i18n="descripcion_btn">Buscar recomendación</button>
+            <button type="reset" class="register-btn" data-i18n="limpiar_btn">Limpiar</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <div class="carousel-header">
+        <h2 data-i18n="carousel_valorados">Bares mejor valorados</h2>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="scrollLeftValorados" type="button">&#10094;</button>
+          <button class="carousel-btn" id="scrollRightValorados" type="button">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="bar-carousel" id="barCarouselValorados"></div>
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <div class="carousel-header">
+        <h2 data-i18n="carousel_visitados">Bares más visitados</h2>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="scrollLeftVisitados" type="button">&#10094;</button>
+          <button class="carousel-btn" id="scrollRightVisitados" type="button">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="bar-carousel" id="barCarouselVisitados"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/web/js/traduccion.js"></script>
+  <script src="/web/js/header.js"></script>
+  <script src="/web/js/inicio.js"></script>
+</body>
+</html>

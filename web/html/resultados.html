@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados | Sistema de Recomendación de Bares de Jaén</title>
+  <link rel="stylesheet" href="/web/css/styles.css?v=1">
+</head>
+<body>
+
+  <div id="headerContainer"></div>
+
+  <main class="resultados-main">
+
+    <section class="resultados-hero">
+      <h1>Bares que mejor encajan contigo</h1>
+      <p>
+        Aquí puedes consultar los bares que te recomienda el sistema en función de tu historial
+        y refinar la búsqueda por nombre, filtros o descripción.
+      </p>
+    </section>
+
+    <section class="resultados-layout">
+
+      <aside class="resultados-filtros">
+        <h2>Refinar búsqueda</h2>
+
+        <div class="search-mode-tabs resultados-tabs">
+          <button class="search-mode-btn active" data-target="resultsByName">Por nombre</button>
+          <button class="search-mode-btn" data-target="resultsByFilters">Por filtros</button>
+          <button class="search-mode-btn" data-target="resultsByDescription">Por descripción</button>
+        </div>
+
+        <div class="search-mode-content">
+
+          <form id="resultsByName" class="search-mode-panel active-panel">
+            <div class="form-group">
+              <label for="resultsName">Buscar por nombre:</label>
+              <input type="text" id="resultsName" placeholder="Ej.: Bar El Tapeo">
+            </div>
+
+            <div class="resultados-filter-buttons">
+              <button type="submit" class="login-btn">Buscar por nombre</button>
+            </div>
+          </form>
+
+          <form id="resultsByFilters" class="search-mode-panel">
+            <div class="form-group">
+              <label for="filterType">Tipo de local:</label>
+              <select id="filterType">
+                <option value="">Todos</option>
+                <option value="bar">Bar</option>
+                <option value="bar de tapas">Bar de tapas</option>
+                <option value="bar restaurante">Bar restaurante</option>
+                <option value="cafe">Café</option>
+                <option value="cerveceria">Cervecería</option>
+                <option value="pub">Pub</option>
+                <option value="restaurant">Restaurante</option>
+                <option value="taberna">Taberna</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="filterZone">Zona:</label>
+              <select id="filterZone">
+                <option value="">Cargando localidades...</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="filterPrice">Precio:</label>
+              <select id="filterPrice">
+                <option value="">Todos</option>
+                <option value="0€">0€</option>
+                <option value="1-10€">1-10€</option>
+                <option value="10-20€">10-20€</option>
+                <option value="20-30€">20-30€</option>
+                <option value="Más de 30€">Más de 30€</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="filterOrder">Ordenar por:</label>
+              <select id="filterOrder">
+                <option value="relevancia">Relevancia</option>
+                <option value="valoracion">Valoración</option>
+                <option value="precioAsc">Precio: menor a mayor</option>
+                <option value="precioDesc">Precio: mayor a menor</option>
+              </select>
+            </div>
+
+            <div class="resultados-filter-buttons">
+              <button type="submit" class="login-btn">Aplicar filtros</button>
+              <button type="reset" class="register-btn">Limpiar</button>
+            </div>
+          </form>
+
+          <form id="resultsByDescription" class="search-mode-panel">
+            <div class="form-group">
+              <label for="resultsText">Texto de búsqueda:</label>
+              <textarea
+                id="resultsText"
+                rows="7"
+                placeholder="Ej.: Me apetece un bar económico por el centro de Jaén con buenas tapas y ambiente tranquilo."
+              ></textarea>
+              <small class="helper-text">Debes escribir al menos 20 palabras.</small>
+              <small class="error-message" id="resultsTextError"></small>
+            </div>
+
+            <div class="resultados-filter-buttons">
+              <button type="submit" class="login-btn">Buscar recomendación</button>
+              <button type="reset" class="register-btn">Limpiar</button>
+            </div>
+          </form>
+
+        </div>
+      </aside>
+
+      <section class="resultados-listado">
+        <div class="resultados-topbar">
+          <div>
+            <h2>Listado de resultados</h2>
+            <p class="resultados-count" id="resultadosCount">Cargando recomendaciones...</p>
+            <p class="resultados-message" id="resultadosMessage"></p>
+          </div>
+        </div>
+
+        <div class="resultados-grid" id="resultadosGrid"></div>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="/web/js/header.js?v=1"></script>
+  <script src="/web/js/resultados.js"></script>
+</body>
+</html>

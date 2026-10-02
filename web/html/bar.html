@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Bar | Sistema de Recomendación de Bares de Jaén</title>
+  <link rel="stylesheet" href="/web/css/styles.css?v=1">
+</head>
+<body>
+
+  <div id="headerContainer"></div>
+
+  <main class="detalle-main">
+
+    <section class="detalle-top-card">
+      <div class="detalle-image-container">
+        <img id="barImagen" src="" alt="Imagen del bar">
+      </div>
+
+      <div class="detalle-info-container">
+        <h1 id="barNombre">Cargando...</h1>
+
+        <div class="detalle-grid">
+          <div class="detalle-item">
+            <span class="detalle-label">Horario:</span>
+            <span id="barHorario">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Web:</span>
+            <a id="barWeb" href="#" class="detalle-link">-</a>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Tipo:</span>
+            <span id="barTipo">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Localización:</span>
+            <span id="barLocalizacion">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Calle:</span>
+            <span id="barCalle">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Municipio:</span>
+            <span id="barMunicipio">-</span>
+          </div>
+
+          <div class="detalle-item">
+            <span class="detalle-label">Precio:</span>
+            <span id="barPrecio">-</span>
+          </div>
+        </div>
+
+
+        <div class="detalle-description-block">
+          <h2>Descripción</h2>
+          <p id="barDescripcion">No disponible</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="valoracion-media-section">
+      <h2>Valoración media</h2>
+      <div class="media-rating-box">
+        <div class="media-rating-number" id="barValoracionNumero">0.0</div>
+        <div class="media-rating-stars" id="barValoracionStars">☆☆☆☆☆</div>
+        <p id="barValoracionCount">Basada en 0 opiniones</p>
+      </div>
+    </section>
+
+    <div class="opiniones-layout">
+      <section class="opinar-section">
+        <h2>Escribe tu opinión</h2>
+
+        <form id="reviewForm" class="review-form">
+          <div class="rating-input-block">
+            <label>Selecciona tu valoración:</label>
+            <div class="star-selector" id="starSelector">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <small class="error-message" id="starsError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewText">Comentario:</label>
+            <textarea id="reviewText" rows="7" placeholder="Escribe aquí tu opinión sobre este local..."></textarea>
+            <small class="error-message" id="reviewError"></small>
+          </div>
+
+          <button type="submit" class="login-btn review-submit-btn">Enviar opinión</button>
+        </form>
+      </section>
+
+      <section class="opiniones-section">
+        <h2>Opiniones de otros usuarios</h2>
+        <div class="opiniones-list" id="opinionesList"></div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="/web/js/header.js?v=1"></script>
+  <script src="/web/js/bar.js?v=1"></script>
+</body>
+</html>

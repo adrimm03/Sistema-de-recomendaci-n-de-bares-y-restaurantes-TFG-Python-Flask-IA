@@ -1,0 +1,9 @@
+services:
+  tfg-restaurantes:
+    build: .
+    container_name: tfg-restaurantes
+    ports:
+      - "8040:5000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
